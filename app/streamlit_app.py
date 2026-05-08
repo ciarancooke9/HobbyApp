@@ -30,8 +30,8 @@ st.write("Predict taxi trip prices based on trip details")
 col1, col2 = st.columns(2)
 
 with col1:
-    distance = st.number_input("Distance (km)", 0.0, 200.0, 10.0)
-    duration = st.number_input("Duration (minutes)", 0.0, 300.0, 25.0)
+    distance = st.slider("Distance (km)", 0.0, 100.0, 10.0, step=0.5)
+    duration = st.slider("Duration (minutes)", 0.0, 250.0, 25.0, step=1.0)
     passengers = st.slider("Passengers", 1, 6, 2)
 
 with col2:
@@ -43,9 +43,10 @@ with col2:
 # Pricing inputs
 st.subheader("Pricing Parameters")
 
-base_fare = st.number_input("Base Fare", 0.0, 10.0, 3.5)
-per_km_rate = st.number_input("Per KM Rate", 0.0, 5.0, 1.0)
-per_min_rate = st.number_input("Per Minute Rate", 0.0, 1.0, 0.3)
+base_fare = st.slider("Base Fare", 0.0, 10.0, 3.5, step=0.1)
+per_km_rate = st.slider("Per KM Rate", 0.0, 5.0, 1.0)
+per_min_rate = st.slider("Per Minute Rate", 0.0, 1.0, 0.3)
+
 
 # --------------------
 # Predict button
